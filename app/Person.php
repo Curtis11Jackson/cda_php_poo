@@ -1,50 +1,69 @@
 <?php
 
-trait Timstampable
+namespace M2i\Person;
+
+trait Timastampable
 {
     private $created_at;
-    
-    public function setCreatedAt($created_at)
+    public function getCreatedAt($created_at)
     {
-        $this->created_at = $created_at;
-
+        $this->created_at($created_at);
         return $this;
     }
 }
 
-class AbstractAction 
+
+interface MakeSoundInterface
 {
-    public function walk(){
-        echo "walking -- ";
+    public function makeSound();
+}
+
+abstract class AbstractAction implements MakeSoundInterface
+{
+    public function walk()
+    {
+    echo 'walking  ';
+    return $this;
     }
 }
 
-class Animal extends AbstractAction {
-    
-}
 
-class Person extends AbstractAction
+abstract class Animal extends AbstractAction 
 {
-    use Timstampable;
-
-    public $name = "Curtis";
-
-    // public function __construct($name)
-    // {
-    //     $this->setName($name);
-    // }
-
-    public function setName($name) 
+    private $name;
+    public function getName($name)
+    {
+        $this->name($name);
+        return $this;
+    }
+    public function setName($name)
     {
         $this->name = $name;
-
         return $this;
+    }
+    public function makeSound(){
+        echo 'bark';
+    }
+    
+}
+
+class Person extends AbstractAction 
+{
+    public $name ='yvan';
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+    public function makeSound(){
+        echo 'speak   >';
     }
 }
 
-$someone = new Person;
+$someone = new Person();
+//var_dump($yvan);
 
-var_dump($someone);
+$someone->setName('curtis')->walk()->makeSound();
+// var_dump($someone);
 
-$someone->setName("Yvan")->walk();
-var_dump($someone);
+var_dump(get_class($someone));
