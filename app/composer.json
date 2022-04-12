@@ -1,0 +1,12 @@
+{
+    "name": "m2i/poo",
+          "autoload": {
+        "psr-4": {
+            "M2i\\Poo\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/var-dumper": "6.1.x-dev"
+    }
+}

@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yvan </title>
-</head>
-<body>
+<?php
 
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-        </ul>
-    </nav>
-    
-    <h1>Home</h1>
+require_once 'vendor/autoload.php';
 
-</body>
-</html>
+require_once 'app/config/AppKernel.php';
+
+
+// dump($_SERVER);
+
+// unset($uri[0]);
+
+// dump($uri);
+
