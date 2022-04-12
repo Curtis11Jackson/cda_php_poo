@@ -3,8 +3,12 @@
 require_once 'Peugeot.php';
 require_once 'Renault.php';
 
-$peugeot = new Peugeot\Car;
+$data = ["portes" => 6, "make" => "C4"];
+
+$peugeot = new Peugeot\Car($data);
 
 echo "<br/>";
 
-$renault = new Renault\Car;
+var_dump($peugeot);
+
+// $renault = new Renault\Car;
